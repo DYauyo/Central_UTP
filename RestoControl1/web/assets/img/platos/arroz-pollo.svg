@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e7fbe8"/><stop offset="1" stop-color="#fff4df"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <ellipse cx="320" cy="265" rx="218" ry="92" fill="#fff"/>
+  <ellipse cx="320" cy="264" rx="170" ry="65" fill="#74b94e"/>
+  <circle cx="262" cy="246" r="18" fill="#f18732"/><circle cx="350" cy="270" r="15" fill="#f18732"/><circle cx="408" cy="242" r="12" fill="#f18732"/>
+  <path d="M260 195c60-29 130-10 142 36 9 36-28 62-76 51-62-15-102-59-66-87z" fill="#c77a33"/>
+  <path d="M288 205c40-13 77 3 86 28" stroke="#e9a45d" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="800" fill="#3f7d28">Arroz con pollo</text>
+</svg>

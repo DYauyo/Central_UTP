@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dff7ff"/><stop offset="1" stop-color="#fff2e7"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <ellipse cx="320" cy="262" rx="220" ry="96" fill="#ffffff"/>
+  <ellipse cx="320" cy="262" rx="170" ry="66" fill="#f0b34e"/>
+  <path d="M245 235c45-22 113-23 165 5" stroke="#de4e2f" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <circle cx="250" cy="260" r="18" fill="#f4e6c9"/><circle cx="340" cy="245" r="16" fill="#f4e6c9"/><circle cx="405" cy="272" r="17" fill="#f4e6c9"/>
+  <path d="M202 243c31-35 65-32 92-4-29 22-60 22-92 4zM380 232c42-31 77-20 93 20-37 13-67 8-93-20z" fill="#f06f4f"/>
+  <path d="M222 220l-22-22M454 223l28-24" stroke="#f06f4f" stroke-width="8" stroke-linecap="round"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="800" fill="#b74b20">Arroz con mariscos</text>
+</svg>

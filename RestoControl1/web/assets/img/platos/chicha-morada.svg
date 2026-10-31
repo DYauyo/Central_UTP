@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2e7ff"/><stop offset="1" stop-color="#fff0df"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <path d="M251 120h138l-18 218H269z" fill="#4a136c"/>
+  <path d="M267 152h106l-12 163h-82z" fill="#7b2bb6"/>
+  <ellipse cx="320" cy="119" rx="75" ry="23" fill="#f7f2ff"/>
+  <ellipse cx="320" cy="118" rx="55" ry="14" fill="#5d1889"/>
+  <path d="M374 106c37 15 62 45 70 88" stroke="#8c4ac4" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <circle cx="285" cy="180" r="12" fill="#cda8ff"/><circle cx="338" cy="216" r="14" fill="#cda8ff"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="800" fill="#51136f">Chicha morada</text>
+</svg>

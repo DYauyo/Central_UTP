@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e5f8ff"/><stop offset="1" stop-color="#fff0df"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <ellipse cx="320" cy="266" rx="224" ry="92" fill="#ffffff"/>
+  <path d="M186 254c68-60 178-75 277-18 31 18 31 39 1 56-82 47-206 37-278-38z" fill="#f1c077"/>
+  <path d="M464 236l64-38v102z" fill="#e4a053"/>
+  <circle cx="249" cy="244" r="10" fill="#38312a"/>
+  <path d="M254 292c65 23 133 20 200-9" stroke="#cc3e28" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <circle cx="356" cy="238" r="15" fill="#f4e6c9"/><circle cx="414" cy="259" r="13" fill="#f4e6c9"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="32" font-weight="800" fill="#995018">Pescado a lo macho</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff2a7"/><stop offset="1" stop-color="#fff8df"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <path d="M252 114h136l-18 224H270z" fill="#f2b51d"/>
+  <path d="M270 148h100l-12 166h-76z" fill="#ffd34f"/>
+  <ellipse cx="320" cy="114" rx="76" ry="22" fill="#fff9db"/>
+  <circle cx="244" cy="250" r="38" fill="#6b2e8a"/><circle cx="244" cy="250" r="24" fill="#ffd34f"/>
+  <circle cx="420" cy="246" r="42" fill="#6b2e8a"/><circle cx="420" cy="246" r="27" fill="#ffd34f"/>
+  <path d="M374 104c37 18 57 46 62 83" stroke="#7f3f98" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="800" fill="#9a6a00">Maracuya</text>
+</svg>

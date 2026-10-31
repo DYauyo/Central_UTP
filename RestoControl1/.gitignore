@@ -1,0 +1,14 @@
+# Generado por NetBeans / Ant
+build/
+dist/
+nbproject/private/
+*.xml~
+
+# Logs de los scripts de arranque
+scripts/*.log
+lib/tomcat/*.part
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

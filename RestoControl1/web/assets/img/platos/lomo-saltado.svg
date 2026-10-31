@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0db"/><stop offset="1" stop-color="#e7f6ff"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <ellipse cx="320" cy="254" rx="230" ry="104" fill="#fffdf7"/>
+  <ellipse cx="320" cy="254" rx="180" ry="74" fill="#f7dfb8"/>
+  <path d="M190 254c72-55 216-64 278-7 22 21 8 44-34 57-72 22-213 9-254-19-18-12-15-23 10-31z" fill="#a65428"/>
+  <g stroke-linecap="round" stroke-width="18"><path d="M205 194l104 114" stroke="#f4c04f"/><path d="M262 184l90 128" stroke="#f4c04f"/><path d="M328 186l86 118" stroke="#f4c04f"/></g>
+  <path d="M214 244c50 14 121 13 205-10" stroke="#d91f2b" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <path d="M252 220c63 23 121 23 180 0" stroke="#51a946" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="800" fill="#8b3b18">Lomo saltado</text>
+</svg>

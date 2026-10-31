@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0d6"/><stop offset="1" stop-color="#edf7ff"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <path d="M250 118h140l-20 220H270z" fill="#b86b28"/>
+  <path d="M268 153h104l-13 160h-78z" fill="#d8873a"/>
+  <ellipse cx="320" cy="118" rx="75" ry="22" fill="#fff3d6"/>
+  <ellipse cx="320" cy="118" rx="54" ry="13" fill="#c17a35"/>
+  <path d="M220 242c-25-64 1-108 56-132M420 245c32-51 23-94-24-129" stroke="#e0a04f" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="800" fill="#8f4f1e">Chicha de jora</text>
+</svg>

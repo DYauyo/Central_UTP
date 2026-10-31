@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:pt="jakarta.faces.passthrough"
+      lang="es">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Cocina | Central</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+        <link href="#{facesContext.externalContext.requestContextPath}/assets/css/estilos.css?v=20260929-tema-central" rel="stylesheet"/>
+    </h:head>
+
+    <h:body styleClass="cocina-jsf-page">
+        <div class="app-layout">
+            <aside class="app-sidebar">
+                <a class="sidebar-brand" href="#{facesContext.externalContext.requestContextPath}#{sessionScope.idRol == 1 or sessionScope.idRol == 6 ? '/PanelServlet' : sessionScope.idRol == 2 ? '/jsf/caja.xhtml' : sessionScope.idRol == 4 ? '/jsf/cocina.xhtml' : sessionScope.idRol == 5 ? '/InsumoServlet' : '/DashboardServlet'}">
+                    <span class="brand-badge">C</span>
+                    <span>
+                        <strong>Central</strong>
+                        <small>Panel operativo</small>
+                    </span>
+                </a>
+
+                <nav class="sidebar-nav">
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1 or sessionScope.idRol == 6}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/PanelServlet">
+                            <i class="bi bi-speedometer2"></i>
+                            <span>Panel principal</span>
+                        </a>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1 or sessionScope.idRol == 3}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/DashboardServlet">
+                            <i class="bi bi-grid-3x3-gap"></i>
+                            <span>Mesas</span>
+                        </a>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1 or sessionScope.idRol == 3}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/jsf/pedidos.xhtml">
+                            <i class="bi bi-clipboard2-check"></i>
+                            <span>Pedidos</span>
+                        </a>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1 or sessionScope.idRol == 4}">
+                        <a class="sidebar-link active" href="#{facesContext.externalContext.requestContextPath}/jsf/cocina.xhtml">
+                            <i class="bi bi-list-check"></i>
+                            <span>Cocina</span>
+                        </a>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1 or sessionScope.idRol == 2}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/jsf/caja.xhtml">
+                            <i class="bi bi-cash-coin"></i>
+                            <span>Caja</span>
+                        </a>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1 or sessionScope.idRol == 6}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/ReporteServlet">
+                            <i class="bi bi-bar-chart-line"></i>
+                            <span>Reportes</span>
+                        </a>
+                    </h:panelGroup>
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/MenuServlet">
+                            <i class="bi bi-menu-button-wide"></i>
+                            <span>Menú y categorías</span>
+                        </a>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1 or sessionScope.idRol == 5}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/InsumoServlet">
+                            <i class="bi bi-box-seam"></i>
+                            <span>Insumos</span>
+                        </a>
+                    </h:panelGroup>
+
+                    <h:panelGroup layout="block" rendered="#{sessionScope.idRol == 1}">
+                        <a class="sidebar-link" href="#{facesContext.externalContext.requestContextPath}/UsuarioServlet">
+                            <i class="bi bi-people"></i>
+                            <span>Usuarios y roles</span>
+                        </a>
+                    </h:panelGroup>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <a class="sidebar-link logout" href="#{facesContext.externalContext.requestContextPath}/LoginServlet?accion=cerrar">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <span>Cerrar sesión</span>
+                    </a>
+                </div>
+            </aside>
+
+            <div class="app-main">
+                <header class="content-header cocina-header">
+                    <div>
+                        <p class="content-kicker">Central</p>
+                        <h1 class="header-title-with-icon">
+                            <span class="header-title-icon cocina-title-icon"><i class="bi bi-egg-fried"></i></span>
+                            <span>Cocina</span>
+                        </h1>
+                        <p>Monitorea pedidos recibidos, preparación, platos listos y entregas del día.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="theme-trigger" type="button" title="Ajustes" aria-label="Ajustes">
+                            <i class="bi bi-gear"></i>
+                        </button>
+                        <form class="language-switch dropdown" action="#{facesContext.externalContext.requestContextPath}/IdiomaServlet" method="post" aria-label="Seleccionar idioma">
+                            <input type="hidden" name="volver" value="#{facesContext.externalContext.requestContextPath}/jsf/cocina.xhtml"/>
+                            <button class="language-trigger" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Seleccionar idioma" aria-label="Seleccionar idioma">
+                                <i class="bi bi-globe2"></i>
+                                <span class="visually-hidden">#{empty sessionScope.idioma ? 'ES' : sessionScope.idioma}</span>
+                            </button>
+                            <ul class="dropdown-menu language-dropdown">
+                                <li>
+                                    <button class="dropdown-item #{empty sessionScope.idioma or sessionScope.idioma == 'es' ? 'active' : ''}" type="submit" name="idioma" value="es">
+                                        <span class="language-code">ES</span>
+                                        <span>Español</span>
+                                        <i class="bi bi-check2 language-check"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item #{sessionScope.idioma == 'en' ? 'active' : ''}" type="submit" name="idioma" value="en">
+                                        <span class="language-code">EN</span>
+                                        <span>English</span>
+                                        <i class="bi bi-check2 language-check"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item #{sessionScope.idioma == 'it' ? 'active' : ''}" type="submit" name="idioma" value="it">
+                                        <span class="language-code">IT</span>
+                                        <span>Italiano</span>
+                                        <i class="bi bi-check2 language-check"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item #{sessionScope.idioma == 'pt' ? 'active' : ''}" type="submit" name="idioma" value="pt">
+                                        <span class="language-code">PT</span>
+                                        <span>Português</span>
+                                        <i class="bi bi-check2 language-check"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </form>
+                        <span class="header-divider" aria-hidden="true"></span>
+                        <div class="user-greeting">
+                            <strong>Hola, #{empty sessionScope.nombreCortoUsuario ? 'Usuario' : sessionScope.nombreCortoUsuario}</strong>
+                            <span>#{empty sessionScope.rolUsuario ? 'Cocina' : sessionScope.rolUsuario}</span>
+                        </div>
+                        <button class="user-menu-button" type="button" aria-label="Perfil de usuario">
+                            <span class="user-avatar">
+                                <i class="bi bi-person-fill"></i>
+                            </span>
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                    </div>
+                </header>
+
+                <main class="content-shell cocina-shell">
+                    <h:form id="formCocina">
+                        <h:panelGroup layout="block" styleClass="alert alert-#{cocinaBean.tipoMensaje} alert-dismissible fade show auto-dismiss-alert" rendered="#{not empty cocinaBean.mensaje}">
+                            <span>#{cocinaBean.mensaje}</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                        </h:panelGroup>
+
+                        <section class="kds-toolbar">
+                            <label class="kds-search">
+                                <i class="bi bi-search"></i>
+                                <h:inputText value="#{cocinaBean.busqueda}" styleClass="kds-search-input" pt:placeholder="Buscar pedido, mesa, cliente o plato..."/>
+                            </label>
+
+                            <h:selectOneMenu value="#{cocinaBean.mesaFiltro}" styleClass="kds-select">
+                                <f:selectItem itemValue="0" itemLabel="Todas las mesas"/>
+                                <f:selectItems value="#{cocinaBean.mesas}" var="mesa" itemValue="#{mesa}" itemLabel="Mesa #{mesa}"/>
+                            </h:selectOneMenu>
+
+                            <h:commandLink action="#{cocinaBean.buscar}" styleClass="kds-tool-button">
+                                <i class="bi bi-funnel"></i>
+                                <span>Filtrar</span>
+                            </h:commandLink>
+                            <h:commandLink action="#{cocinaBean.limpiarFiltros}" styleClass="kds-tool-button ghost">
+                                <i class="bi bi-x-circle"></i>
+                                <span>Limpiar</span>
+                            </h:commandLink>
+                        </section>
+
+                        <section class="kds-board">
+                            <article class="kds-column received">
+                                <header class="kds-column-head">
+                                    <div>
+                                        <strong>Recibido</strong>
+                                        <span>Esperando turno</span>
+                                    </div>
+                                    <b>#{cocinaBean.recibidos.size()}</b>
+                                </header>
+
+                                <h:panelGroup layout="block" styleClass="kds-empty-column" rendered="#{empty cocinaBean.recibidos}">
+                                    <i class="bi bi-inbox"></i>
+                                    <span>Sin pedidos recibidos</span>
+                                </h:panelGroup>
+
+                                <ui:repeat value="#{cocinaBean.recibidos}" var="pedido">
+                                    <article class="kds-order-card #{pedido.primeroEnCola ? 'is-next' : 'is-waiting'} #{pedido.retrasado ? 'is-late' : ''}">
+                                        <div class="kds-card-top">
+                                            <strong>##{pedido.idPedido}</strong>
+                                            <span>#{pedido.ubicacionTexto}</span>
+                                        </div>
+                                        <div class="kds-card-meta">
+                                            <span><i class="bi bi-person"></i> #{pedido.clienteTexto}</span>
+                                            <span><i class="bi bi-clock"></i> #{pedido.horaPedido}</span>
+                                        </div>
+                                        <ul class="kds-items">
+                                            <ui:repeat value="#{pedido.detalles}" var="detalle">
+                                                <li><strong>#{detalle.cantidad}x</strong> #{detalle.nombreProducto}</li>
+                                            </ui:repeat>
+                                        </ul>
+                                        <div class="kds-card-flags">
+                                            <span class="kds-time"><i class="bi bi-hourglass-split"></i> Espera #{pedido.tiempoTexto}</span>
+                                            <h:panelGroup rendered="#{pedido.retrasado}">
+                                                <span class="kds-late"><i class="bi bi-exclamation-triangle"></i> Retrasado</span>
+                                            </h:panelGroup>
+                                        </div>
+                                        <h:panelGroup rendered="#{pedido.primeroEnCola}">
+                                            <h:commandLink action="#{cocinaBean.iniciarPreparacion(pedido.idPedido)}" styleClass="kds-card-action primary">
+                                                <i class="bi bi-play-fill"></i>
+                                                <span>Iniciar preparación</span>
+                                            </h:commandLink>
+                                        </h:panelGroup>
+                                        <h:panelGroup rendered="#{not pedido.primeroEnCola}">
+                                            <button type="button" class="kds-card-action disabled" disabled="disabled">
+                                                <i class="bi bi-lock"></i>
+                                                <span>Esperando turno</span>
+                                            </button>
+                                        </h:panelGroup>
+                                    </article>
+                                </ui:repeat>
+                            </article>
+
+                            <article class="kds-column cooking">
+                                <header class="kds-column-head">
+                                    <div>
+                                        <strong>En preparación</strong>
+                                        <span>En proceso de cocción</span>
+                                    </div>
+                                    <b>#{cocinaBean.enPreparacion.size()}</b>
+                                </header>
+
+                                <h:panelGroup layout="block" styleClass="kds-empty-column" rendered="#{empty cocinaBean.enPreparacion}">
+                                    <i class="bi bi-fire"></i>
+                                    <span>No hay preparación activa</span>
+                                </h:panelGroup>
+
+                                <ui:repeat value="#{cocinaBean.enPreparacion}" var="pedido">
+                                    <article class="kds-order-card #{pedido.retrasado ? 'is-late' : ''}">
+                                        <div class="kds-card-top">
+                                            <strong>##{pedido.idPedido}</strong>
+                                            <span>#{pedido.ubicacionTexto}</span>
+                                        </div>
+                                        <div class="kds-card-meta">
+                                            <span><i class="bi bi-person"></i> #{pedido.clienteTexto}</span>
+                                            <span><i class="bi bi-clock"></i> #{pedido.horaPedido}</span>
+                                        </div>
+                                        <ul class="kds-items">
+                                            <ui:repeat value="#{pedido.detalles}" var="detalle">
+                                                <li><strong>#{detalle.cantidad}x</strong> #{detalle.nombreProducto}</li>
+                                            </ui:repeat>
+                                        </ul>
+                                        <div class="kds-card-flags">
+                                            <span class="kds-time"><i class="bi bi-stopwatch"></i> En cocina #{pedido.tiempoTexto}</span>
+                                            <h:panelGroup rendered="#{pedido.retrasado}">
+                                                <span class="kds-late"><i class="bi bi-exclamation-triangle"></i> Pedido retrasado</span>
+                                            </h:panelGroup>
+                                        </div>
+                                        <h:commandLink action="#{cocinaBean.marcarListo(pedido.idPedido)}" styleClass="kds-card-action warning">
+                                            <i class="bi bi-check2-circle"></i>
+                                            <span>Marcar como listo</span>
+                                        </h:commandLink>
+                                    </article>
+                                </ui:repeat>
+                            </article>
+
+                            <article class="kds-column ready">
+                                <header class="kds-column-head">
+                                    <div>
+                                        <strong>Listo</strong>
+                                        <span>Listo para entregar</span>
+                                    </div>
+                                    <b>#{cocinaBean.listos.size()}</b>
+                                </header>
+
+                                <h:panelGroup layout="block" styleClass="kds-empty-column" rendered="#{empty cocinaBean.listos}">
+                                    <i class="bi bi-check-circle"></i>
+                                    <span>Nada listo por ahora</span>
+                                </h:panelGroup>
+
+                                <ui:repeat value="#{cocinaBean.listos}" var="pedido">
+                                    <article class="kds-order-card">
+                                        <div class="kds-card-top">
+                                            <strong>##{pedido.idPedido}</strong>
+                                            <span>#{pedido.ubicacionTexto}</span>
+                                        </div>
+                                        <div class="kds-card-meta">
+                                            <span><i class="bi bi-person"></i> #{pedido.clienteTexto}</span>
+                                            <span><i class="bi bi-clock"></i> #{pedido.horaPedido}</span>
+                                        </div>
+                                        <ul class="kds-items">
+                                            <ui:repeat value="#{pedido.detalles}" var="detalle">
+                                                <li><strong>#{detalle.cantidad}x</strong> #{detalle.nombreProducto}</li>
+                                            </ui:repeat>
+                                        </ul>
+                                        <span class="kds-time ready-note"><i class="bi bi-bell"></i> Avisar a sala para recojo</span>
+                                        <h:commandLink action="#{cocinaBean.marcarEntregado(pedido.idPedido)}" styleClass="kds-card-action success">
+                                            <i class="bi bi-send-check"></i>
+                                            <span>Marcar como entregado</span>
+                                        </h:commandLink>
+                                    </article>
+                                </ui:repeat>
+                            </article>
+
+                            <article class="kds-column delivered">
+                                <header class="kds-column-head">
+                                    <div>
+                                        <strong>Entregado</strong>
+                                        <span>Finalizados hoy</span>
+                                    </div>
+                                    <b>#{cocinaBean.entregados.size()}</b>
+                                </header>
+
+                                <h:panelGroup layout="block" styleClass="kds-empty-column" rendered="#{empty cocinaBean.entregados}">
+                                    <i class="bi bi-bag-check"></i>
+                                    <span>Aún no hay entregados</span>
+                                </h:panelGroup>
+
+                                <ui:repeat value="#{cocinaBean.entregados}" var="pedido">
+                                    <article class="kds-order-card compact">
+                                        <div class="kds-card-top">
+                                            <strong>##{pedido.idPedido}</strong>
+                                            <span>#{pedido.ubicacionTexto}</span>
+                                        </div>
+                                        <div class="kds-card-meta">
+                                            <span><i class="bi bi-person"></i> #{pedido.clienteTexto}</span>
+                                            <span><i class="bi bi-clock-history"></i> #{pedido.tiempoTexto}</span>
+                                        </div>
+                                        <ul class="kds-items">
+                                            <ui:repeat value="#{pedido.detalles}" var="detalle">
+                                                <li><strong>#{detalle.cantidad}x</strong> #{detalle.nombreProducto}</li>
+                                            </ui:repeat>
+                                        </ul>
+                                        <span class="kds-delivered-note"><i class="bi bi-check2-all"></i> Entregado</span>
+                                    </article>
+                                </ui:repeat>
+                            </article>
+                        </section>
+
+                        <section class="kds-metrics">
+                            <div>
+                                <i class="bi bi-clipboard2-check"></i>
+                                <strong>#{cocinaBean.totalPedidos}</strong>
+                                <span>Pedidos visibles</span>
+                            </div>
+                            <div>
+                                <i class="bi bi-fire"></i>
+                                <strong>#{cocinaBean.enPreparacion.size()}</strong>
+                                <span>En preparación</span>
+                            </div>
+                            <div>
+                                <i class="bi bi-check-circle"></i>
+                                <strong>#{cocinaBean.listos.size()}</strong>
+                                <span>Listos para entregar</span>
+                            </div>
+                            <div>
+                                <i class="bi bi-clock"></i>
+                                <strong>#{cocinaBean.tiempoPromedioTexto}</strong>
+                                <span>Promedio en cocina</span>
+                            </div>
+                            <div>
+                                <i class="bi bi-exclamation-triangle"></i>
+                                <strong>#{cocinaBean.pedidosRetrasados}</strong>
+                                <span>Pedidos retrasados</span>
+                            </div>
+                        </section>
+                    </h:form>
+                </main>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.querySelectorAll('.auto-dismiss-alert').forEach(function (alertBox) {
+                setTimeout(function () {
+                    alertBox.classList.add('alert-hiding');
+                    setTimeout(function () {
+                        var instance = bootstrap.Alert.getOrCreateInstance(alertBox);
+                        instance.close();
+                    }, 450);
+                }, 4200);
+            });
+        </script>
+    </h:body>
+</html>

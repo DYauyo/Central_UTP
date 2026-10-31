@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff6e5"/><stop offset="1" stop-color="#f2f8ff"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <ellipse cx="320" cy="282" rx="202" ry="70" fill="#ffffff"/>
+  <path d="M210 210h220c0 82-38 120-110 120s-110-38-110-120z" fill="#f6f0df"/>
+  <ellipse cx="320" cy="211" rx="110" ry="35" fill="#fffaf0"/>
+  <path d="M255 186c44 26 89 28 135 0M275 226c30 15 60 16 91 2" stroke="#a3632c" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="292" cy="208" r="7" fill="#a3632c"/><circle cx="348" cy="220" r="7" fill="#a3632c"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="34" font-weight="800" fill="#8b5a2b">Arroz con leche</text>
+</svg>

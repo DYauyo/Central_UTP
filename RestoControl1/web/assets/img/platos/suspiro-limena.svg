@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0f6"/><stop offset="1" stop-color="#fff4dc"/></linearGradient></defs>
+  <rect width="640" height="420" fill="url(#bg)"/>
+  <path d="M245 160h150l-21 178H266z" fill="#c98a43"/>
+  <path d="M263 206h114l-11 108h-92z" fill="#e0a85b"/>
+  <ellipse cx="320" cy="158" rx="88" ry="26" fill="#fff8ea"/>
+  <path d="M260 144c18-43 55-54 78-10 25-30 62-20 70 24-48 19-98 17-148-14z" fill="#fffdf7"/>
+  <path d="M277 151c36 16 73 17 110 1" stroke="#d9a45b" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <text x="320" y="372" text-anchor="middle" font-family="Segoe UI, Arial" font-size="32" font-weight="800" fill="#9f5c28">Suspiro a la limena</text>
+</svg>
