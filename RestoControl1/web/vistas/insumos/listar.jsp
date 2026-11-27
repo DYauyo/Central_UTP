@@ -114,6 +114,7 @@
                         <a class="${activeTab == 'inventario' ? 'active' : ''}" href="${pageContext.request.contextPath}/InsumoServlet?tab=inventario">
                             <i class="bi bi-boxes"></i> Inventario
                         </a>
+                        <a href="${pageContext.request.contextPath}/ProveedorServlet">Proveedores</a>
                         <a class="${activeTab == 'recetas' ? 'active' : ''}" href="${pageContext.request.contextPath}/InsumoServlet?tab=recetas">
                             <i class="bi bi-journal-richtext"></i> Recetas por plato
                         </a>

@@ -89,7 +89,7 @@ public class SeguridadFilter implements Filter {
             return esAdministrador(idRol);
         }
 
-        if (ruta.equals("/InsumoServlet") || ruta.startsWith("/vistas/insumos/")) {
+        if (ruta.equals("/InsumoServlet") || ruta.equals("/ProveedorServlet") || ruta.startsWith("/vistas/insumos/")) {
             return esAdministrador(idRol) || esAlmacen(idRol);
         }
 
