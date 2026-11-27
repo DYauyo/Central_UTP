@@ -20,8 +20,8 @@
         <main class="content-shell">
             <a href="<c:url value='/InsumoServlet'/>">Volver a insumos</a>
             <h1 class="section-title my-3">Proveedores</h1>
-            <c:if test="${not empty error}"><div class="alert alert-danger" role="alert"><c:out value="${error}"/></div></c:if>
-            <c:if test="${empty error and param.guardado == '1'}"><div class="alert alert-success" role="status">Cambio guardado.</div></c:if>
+            <c:if test="${not empty error}"><div class="alert alert-danger" data-message-popup="danger" role="alert"><c:out value="${error}"/></div></c:if>
+            <c:if test="${empty error and param.guardado == '1'}"><div class="alert alert-success" data-message-popup="success" role="status">Cambio guardado.</div></c:if>
             <section class="panel mb-4 p-3">
                 <h2 class="h5">${empty edicion or edicion.id() == 0 ? 'Registrar proveedor' : 'Editar proveedor'}</h2>
                 <form action="${ruta}" method="post" class="row g-3">

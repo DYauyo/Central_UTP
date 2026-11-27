@@ -36,16 +36,16 @@
 
                 <div class="panel-body">
                     <c:if test="${param.mensaje == 'registrado'}">
-                        <div class="alert alert-success">Categoría registrada correctamente.</div>
+                        <div class="alert alert-success" data-message-popup="success">Categoría registrada correctamente.</div>
                     </c:if>
                     <c:if test="${param.mensaje == 'actualizado'}">
-                        <div class="alert alert-success">Categoría actualizada correctamente.</div>
+                        <div class="alert alert-success" data-message-popup="success">Categoría actualizada correctamente.</div>
                     </c:if>
                     <c:if test="${param.mensaje == 'desactivado'}">
-                        <div class="alert alert-warning">Categoría desactivada correctamente.</div>
+                        <div class="alert alert-warning" data-message-popup="warning">Categoría desactivada correctamente.</div>
                     </c:if>
                     <c:if test="${param.mensaje == 'no_encontrado'}">
-                        <div class="alert alert-danger">No se encontró la categoría solicitada.</div>
+                        <div class="alert alert-danger" data-message-popup="danger">No se encontró la categoría solicitada.</div>
                     </c:if>
 
                     <c:choose>

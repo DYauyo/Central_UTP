@@ -49,3 +49,4 @@
         </button>
     </div>
 </header>
+<script defer src="${pageContext.request.contextPath}/assets/js/message-popup.js"></script>

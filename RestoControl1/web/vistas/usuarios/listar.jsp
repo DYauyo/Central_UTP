@@ -26,57 +26,48 @@
 
                 <main class="content-shell user-admin-shell">
                     <c:if test="${not empty error}">
-                        <div class="alert alert-danger alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-danger" data-message-popup="danger" role="alert">
                             ${error}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'registrado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Usuario registrado correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'actualizado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Usuario actualizado correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'desactivado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Usuario desactivado correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'usuario_estado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Estado del usuario actualizado correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'no_encontrado'}">
-                        <div class="alert alert-danger alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-danger" data-message-popup="danger" role="alert">
                             No se encontro el usuario solicitado.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'rol_registrado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Rol registrado correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'rol_actualizado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Rol actualizado correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'rol_estado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Estado del rol actualizado correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
 
@@ -411,17 +402,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            document.querySelectorAll('.auto-dismiss-alert').forEach(function (alertNode) {
-                window.setTimeout(function () {
-                    if (!document.body.contains(alertNode)) {
-                        return;
-                    }
-                    alertNode.classList.add('alert-hiding');
-                    window.setTimeout(function () {
-                        bootstrap.Alert.getOrCreateInstance(alertNode).close();
-                    }, 450);
-                }, 4000);
-            });
 
             document.querySelectorAll('.needs-validation').forEach(function (form) {
                 form.addEventListener('submit', function (event) {
