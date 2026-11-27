@@ -9429,3 +9429,40 @@ body.salon-page .salon-grid .tile-waiter {
     background-color: #fffaf0 !important;
     box-shadow: 3px 3px 0 0 var(--c-tomato) !important;
 }
+
+.message-popup {
+    box-sizing: border-box;
+    width: min(30rem, calc(100% - 2rem));
+    max-height: calc(100% - 2rem);
+    padding: 1.25rem;
+    color: #191410;
+    background: #fffaf3;
+    border: 2px solid #191410;
+    border-radius: 0.75rem;
+    box-shadow: 5px 5px 0 #191410;
+}
+
+.message-popup::backdrop {
+    background: rgba(25, 20, 16, 0.55);
+}
+
+.message-popup h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+}
+
+.message-popup-text {
+    padding: 0.75rem;
+    border-inline-start: 4px solid #191410;
+    border-radius: 0.25rem;
+    overflow-wrap: anywhere;
+}
+
+.message-popup-text[data-tone="success"] { background: #bdf0d7; }
+.message-popup-text[data-tone="danger"] { background: #ffc9bb; }
+.message-popup-text[data-tone="warning"] { background: #ffe39e; }
+
+.message-popup form {
+    display: flex;
+    justify-content: flex-end;
+}

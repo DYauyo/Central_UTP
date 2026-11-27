@@ -30,10 +30,10 @@
                 </div>
                 <div class="panel-body">
                     <c:if test="${not empty error}">
-                        <div class="alert alert-danger">${error}</div>
+                        <div class="alert alert-danger" data-message-popup="danger">${error}</div>
                     </c:if>
                     <c:if test="${empty categorias}">
-                        <div class="alert alert-warning">
+                        <div class="alert alert-warning" data-message-popup="warning">
                             Primero debes registrar una categoría activa para crear productos.
                         </div>
                     </c:if>

@@ -80,3 +80,14 @@ El detalle queda en `scripts/levantar_tomcat.log`.
    - `WEB-INF/beans.xml` (CDI, `bean-discovery-mode="annotated"`)
    - `META-INF/context.xml` con el recurso `BeanManager` de Weld
 3. Copiar el WAR como `RestoControl.war` en `TOMCAT/webapps` y ejecutar `TOMCAT/bin/startup.bat`.
+
+## Sprint 3 — Fase 1: proveedores
+
+Sobre una instalación que ya tenga la base `sistema_restaurante2`, ejecuta
+`database/sprint3_fase1_proveedores.sql` en MySQL. La migración crea las tablas
+`proveedor` e `insumo_proveedor` y conserva los datos existentes.
+
+Después de desplegar la aplicación, entra como Administrador o Almacén y abre
+**Insumos → Proveedores**. Desde allí puedes registrar y editar proveedores,
+cambiar su estado y asociar varios proveedores a un insumo. Los proveedores
+inactivos conservan sus asociaciones y quedan fuera de las nuevas selecciones.

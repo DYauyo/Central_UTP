@@ -30,7 +30,7 @@
                 </div>
                 <div class="panel-body">
                     <c:if test="${not empty error}">
-                        <div class="alert alert-danger">${error}</div>
+                        <div class="alert alert-danger" data-message-popup="danger">${error}</div>
                     </c:if>
 
                     <form action="${pageContext.request.contextPath}/InsumoServlet" method="post" class="needs-validation" novalidate>

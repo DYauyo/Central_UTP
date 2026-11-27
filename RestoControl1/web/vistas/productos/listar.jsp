@@ -36,16 +36,16 @@
 
                 <div class="panel-body">
                     <c:if test="${param.mensaje == 'registrado'}">
-                        <div class="alert alert-success">Producto registrado correctamente.</div>
+                        <div class="alert alert-success" data-message-popup="success">Producto registrado correctamente.</div>
                     </c:if>
                     <c:if test="${param.mensaje == 'actualizado'}">
-                        <div class="alert alert-success">Producto actualizado correctamente.</div>
+                        <div class="alert alert-success" data-message-popup="success">Producto actualizado correctamente.</div>
                     </c:if>
                     <c:if test="${param.mensaje == 'desactivado'}">
-                        <div class="alert alert-warning">Producto desactivado correctamente.</div>
+                        <div class="alert alert-warning" data-message-popup="warning">Producto desactivado correctamente.</div>
                     </c:if>
                     <c:if test="${param.mensaje == 'no_encontrado'}">
-                        <div class="alert alert-danger">No se encontró el producto solicitado.</div>
+                        <div class="alert alert-danger" data-message-popup="danger">No se encontró el producto solicitado.</div>
                     </c:if>
 
                     <c:choose>

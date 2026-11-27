@@ -41,27 +41,23 @@
 
                 <main class="content-shell menu-shell">
                     <c:if test="${not empty requestScope.error}">
-                        <div class="alert alert-danger alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-danger" data-message-popup="danger" role="alert">
                             ${requestScope.error}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'guardado'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             <fmt:message key="menu.message.saved"/>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'desactivado'}">
-                        <div class="alert alert-warning alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-warning" data-message-popup="warning" role="alert">
                             <fmt:message key="menu.message.disabled"/>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'estimacion_guardada'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss-alert" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             <fmt:message key="menu.message.estimate_saved"/>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
 
@@ -678,18 +674,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            document.querySelectorAll('.auto-dismiss-alert').forEach(function (alertNode) {
-                window.setTimeout(function () {
-                    if (!document.body.contains(alertNode)) {
-                        return;
-                    }
-                    alertNode.classList.add('alert-hiding');
-                    window.setTimeout(function () {
-                        var alertInstance = bootstrap.Alert.getOrCreateInstance(alertNode);
-                        alertInstance.close();
-                    }, 450);
-                }, 4000);
-            });
 
             var MENU_FILTER_TYPES = [
                 'status',

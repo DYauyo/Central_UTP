@@ -26,52 +26,44 @@
 
                 <main class="content-shell inventory-shell">
                     <c:if test="${not empty error}">
-                        <div class="alert alert-danger alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-danger" data-message-popup="danger" role="alert">
                             ${error}
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
 
                     <c:if test="${param.mensaje == 'registrado'}">
-                        <div class="alert alert-success alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Insumo registrado correctamente.
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'actualizado'}">
-                        <div class="alert alert-success alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Insumo actualizado correctamente.
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'desactivado'}">
-                        <div class="alert alert-warning alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-warning" data-message-popup="warning" role="alert">
                             Insumo desactivado correctamente.
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'estado_insumo'}">
-                        <div class="alert alert-success alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Estado del insumo actualizado correctamente.
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'no_encontrado'}">
-                        <div class="alert alert-danger alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-danger" data-message-popup="danger" role="alert">
                             No se encontro el insumo solicitado.
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'receta_guardada'}">
-                        <div class="alert alert-success alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Receta guardada correctamente. Ya puede ser validada desde Estimacion diaria.
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
                     <c:if test="${param.mensaje == 'receta_limpiada'}">
-                        <div class="alert alert-warning alert-dismissible auto-alert" data-auto-alert role="alert">
+                        <div class="alert alert-warning" data-message-popup="warning" role="alert">
                             Receta limpiada correctamente.
-                            <button type="button" class="btn-close" aria-label="Cerrar" data-alert-close></button>
                         </div>
                     </c:if>
 
@@ -114,6 +106,7 @@
                         <a class="${activeTab == 'inventario' ? 'active' : ''}" href="${pageContext.request.contextPath}/InsumoServlet?tab=inventario">
                             <i class="bi bi-boxes"></i> Inventario
                         </a>
+                        <a href="${pageContext.request.contextPath}/ProveedorServlet">Proveedores</a>
                         <a class="${activeTab == 'recetas' ? 'active' : ''}" href="${pageContext.request.contextPath}/InsumoServlet?tab=recetas">
                             <i class="bi bi-journal-richtext"></i> Recetas por plato
                         </a>
@@ -386,19 +379,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            document.querySelectorAll('[data-auto-alert]').forEach(function (alertBox) {
-                var close = function () {
-                    alertBox.classList.add('alert-fading');
-                    window.setTimeout(function () {
-                        alertBox.remove();
-                    }, 350);
-                };
-                var closeButton = alertBox.querySelector('[data-alert-close]');
-                if (closeButton) {
-                    closeButton.addEventListener('click', close);
-                }
-                window.setTimeout(close, 4000);
-            });
 
             document.querySelectorAll('[data-inventory-search]').forEach(function (input) {
                 input.addEventListener('input', function () {

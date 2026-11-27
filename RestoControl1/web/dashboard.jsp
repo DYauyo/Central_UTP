@@ -35,12 +35,11 @@
 
                 <main class="content-shell salon-shell">
                     <c:if test="${param.mensaje == 'sin_permiso'}">
-                        <div class="alert alert-warning"><fmt:message key="salon.permission.denied"/></div>
+                        <div class="alert alert-warning" data-message-popup="warning"><fmt:message key="salon.permission.denied"/></div>
                     </c:if>
                     <c:if test="${param.mensaje == 'reserva_registrada'}">
-                        <div class="alert alert-success alert-dismissible fade show auto-dismiss" role="alert">
+                        <div class="alert alert-success" data-message-popup="success" role="alert">
                             Reserva registrada correctamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
                         </div>
                     </c:if>
 
@@ -525,14 +524,6 @@
                 check.addEventListener('change', actualizarUnionMesas);
             });
 
-            document.querySelectorAll('.auto-dismiss').forEach(function (alert) {
-                setTimeout(function () {
-                    alert.classList.add('alert-fading');
-                    setTimeout(function () {
-                        bootstrap.Alert.getOrCreateInstance(alert).close();
-                    }, 360);
-                }, 4200);
-            });
         </script>
     </body>
 </html>
